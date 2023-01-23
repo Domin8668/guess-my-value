@@ -36,11 +36,7 @@ const Game = () => {
 
   useEffect(() => {
     setPreviousPlayer(players[getNewIndex()]);
-    setNewPlayer(() => {
-      const test = players[getNewIndex()];
-      console.log(previousPlayer, test);
-      return test;
-    });
+    setNewPlayer(players[getNewIndex()]);
   }, [players]);
 
   useEffect(() => {
