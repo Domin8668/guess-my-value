@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 import "./Root.css";
-import players from "../../data/players.json";
-import Home from "../home/Home";
+import data from "../../data/players.json";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 const Level = {
   Easy: "Easy",
@@ -16,7 +18,7 @@ const Lives = {
 };
 
 const Root = () => {
-  const [data, setData] = useState([]);
+  const [players, setPlayers] = useState([]);
   const [record, setRecord] = useState({
     [Level.Easy]: 0,
     [Level.Medium]: 0,
@@ -30,7 +32,7 @@ const Root = () => {
   const [isGameOver, setIsGameOver] = useState(false);
 
   useEffect(() => {
-    setData(players);
+    setPlayers(data);
   }, []);
 
   useEffect(() => {
@@ -49,36 +51,48 @@ const Root = () => {
   }, [score]);
 
   useEffect(() => {
-    setScore(0);
+    setLives(Lives[currentLevel]);
+    setRemainingLives(Lives[currentLevel]);
   }, [currentLevel]);
+
+  useEffect(() => {
+    if (remainingLives === 0) setIsGameOver(true);
+  }, [remainingLives]);
 
   useEffect(() => {
     if (record[currentLevel]) updateLocalStorage();
   }, [record]);
-
-  const updateScore = (record) => {
-    setScore(record);
-  };
 
   const updateLocalStorage = () => {
     localStorage.setItem("record", JSON.stringify(record));
   };
 
   return (
-    <div className="main-container">
-      <Home
-        score={score}
-        setScore={setScore}
-        level={currentLevel}
-        setLevel={setCurrentLevel}
-        remainingLives={remainingLives}
-        setRemainingLives={setRemainingLives}
-        isGameInProgress={isGameInProgress}
-        setIsGameInProgress={setIsGameInProgress}
-        isGameOver={isGameOver}
-        setIsGameOver={setIsGameOver}
-      />
-    </div>
+    <>
+      <Header />
+      <main className="main-content">
+        <Outlet
+          context={{
+            Lives,
+            Level,
+            players,
+            currentLevel,
+            score,
+            setScore,
+            setCurrentLevel,
+            lives,
+            setLives,
+            remainingLives,
+            setRemainingLives,
+            isGameInProgress,
+            setIsGameInProgress,
+            isGameOver,
+            setIsGameOver,
+          }}
+        />
+      </main>
+      <Footer />
+    </>
   );
 };
 
