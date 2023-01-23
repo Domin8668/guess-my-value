@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./Root.css";
-import players from "../../data/players.json";
+import data from "../../data/players.json";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
@@ -18,7 +18,7 @@ const Lives = {
 };
 
 const Root = () => {
-  const [data, setData] = useState([]);
+  const [players, setPlayers] = useState([]);
   const [record, setRecord] = useState({
     [Level.Easy]: 0,
     [Level.Medium]: 0,
@@ -32,7 +32,7 @@ const Root = () => {
   const [isGameOver, setIsGameOver] = useState(false);
 
   useEffect(() => {
-    setData(players);
+    setPlayers(data);
   }, []);
 
   useEffect(() => {
@@ -51,16 +51,17 @@ const Root = () => {
   }, [score]);
 
   useEffect(() => {
-    setScore(0);
+    setLives(Lives[currentLevel]);
+    setRemainingLives(Lives[currentLevel]);
   }, [currentLevel]);
+
+  useEffect(() => {
+    if (remainingLives === 0) setIsGameOver(true);
+  }, [remainingLives]);
 
   useEffect(() => {
     if (record[currentLevel]) updateLocalStorage();
   }, [record]);
-
-  const updateScore = (record) => {
-    setScore(record);
-  };
 
   const updateLocalStorage = () => {
     localStorage.setItem("record", JSON.stringify(record));
@@ -74,8 +75,10 @@ const Root = () => {
           context={{
             Lives,
             Level,
-            data,
+            players,
             currentLevel,
+            score,
+            setScore,
             setCurrentLevel,
             lives,
             setLives,
