@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./Root.css";
 import players from "../../data/players.json";
+import Home from "../home/Home";
 
 const Level = {
   Easy: "Easy",
   Medium: "Medium",
   Hard: "Hard",
+};
+
+const Lives = {
+  [Level.Easy]: 3,
+  [Level.Medium]: 2,
+  [Level.Hard]: 1,
 };
 
 const Root = () => {
@@ -15,8 +22,12 @@ const Root = () => {
     [Level.Medium]: 0,
     [Level.Hard]: 0,
   });
-  const [currentRecord, setCurrentRecord] = useState(0);
+  const [score, setScore] = useState(0);
   const [currentLevel, setCurrentLevel] = useState(Level.Easy);
+  const [lives, setLives] = useState(Lives[currentLevel]);
+  const [remainingLives, setRemainingLives] = useState(Lives[currentLevel]);
+  const [isGameInProgress, setIsGameInProgress] = useState(false);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   useEffect(() => {
     setData(players);
@@ -32,21 +43,21 @@ const Root = () => {
   }, []);
 
   useEffect(() => {
-    if (currentRecord > record[currentLevel]) {
-      setRecord((record) => ({ ...record, [currentLevel]: currentRecord }));
+    if (score > record[currentLevel]) {
+      setRecord((record) => ({ ...record, [currentLevel]: score }));
     }
-  }, [currentRecord]);
+  }, [score]);
 
   useEffect(() => {
-    setCurrentRecord(0);
+    setScore(0);
   }, [currentLevel]);
 
   useEffect(() => {
     if (record[currentLevel]) updateLocalStorage();
   }, [record]);
 
-  const updateCurrentRecord = (record) => {
-    setCurrentRecord(record);
+  const updateScore = (record) => {
+    setScore(record);
   };
 
   const updateLocalStorage = () => {
@@ -54,12 +65,19 @@ const Root = () => {
   };
 
   return (
-    <div>
-      <div>Root: {data ? data[0]?.name : "null"}</div>
-      <button onClick={() => updateCurrentRecord(currentRecord + 1)}>
-        Update
-      </button>
-      <div>Record: {currentRecord}</div>
+    <div className="main-container">
+      <Home
+        score={score}
+        setScore={setScore}
+        level={currentLevel}
+        setLevel={setCurrentLevel}
+        remainingLives={remainingLives}
+        setRemainingLives={setRemainingLives}
+        isGameInProgress={isGameInProgress}
+        setIsGameInProgress={setIsGameInProgress}
+        isGameOver={isGameOver}
+        setIsGameOver={setIsGameOver}
+      />
     </div>
   );
 };
