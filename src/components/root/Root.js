@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 import "./Root.css";
 import players from "../../data/players.json";
-import Home from "../home/Home";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 const Level = {
   Easy: "Easy",
@@ -65,20 +67,29 @@ const Root = () => {
   };
 
   return (
-    <div className="main-container">
-      <Home
-        score={score}
-        setScore={setScore}
-        level={currentLevel}
-        setLevel={setCurrentLevel}
-        remainingLives={remainingLives}
-        setRemainingLives={setRemainingLives}
-        isGameInProgress={isGameInProgress}
-        setIsGameInProgress={setIsGameInProgress}
-        isGameOver={isGameOver}
-        setIsGameOver={setIsGameOver}
-      />
-    </div>
+    <>
+      <Header />
+      <main className="main-content">
+        <Outlet
+          context={{
+            Lives,
+            Level,
+            data,
+            currentLevel,
+            setCurrentLevel,
+            lives,
+            setLives,
+            remainingLives,
+            setRemainingLives,
+            isGameInProgress,
+            setIsGameInProgress,
+            isGameOver,
+            setIsGameOver,
+          }}
+        />
+      </main>
+      <Footer />
+    </>
   );
 };
 
