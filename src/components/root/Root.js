@@ -24,8 +24,10 @@ const Root = () => {
 
   useEffect(() => {
     const localStorageRecord = JSON.parse(localStorage.getItem("record"));
-    if (localStorageRecord && Object.keys(localStorageRecord).length !== 0) {
+    if (localStorageRecord) {
       setRecord(localStorageRecord);
+    } else {
+      updateLocalStorage();
     }
   }, []);
 
