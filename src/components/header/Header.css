@@ -1,0 +1,13 @@
+.header {
+  background-color: var(--blue);
+  border-bottom: 2px solid var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+}
+
+.logo {
+  background-color: var(--white);
+}

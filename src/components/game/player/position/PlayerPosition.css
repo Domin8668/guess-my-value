@@ -1,0 +1,45 @@
+.player-position-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  height: 9rem;
+  border: 2px solid var(--gray);
+  border-radius: 1rem;
+}
+
+/* Forwards section */
+.for-section {
+  height: 33.33%;
+  border-bottom: 2px solid var(--gray);
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  display: flex;
+  background-color: var(--white);
+}
+
+/* Midfielders section */
+.mid-section {
+  height: 33.33%;
+  border-bottom: 2px solid var(--gray);
+  background-color: var(--white);
+}
+/* Defenders section */
+.def-section {
+  height: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  background-color: var(--white);
+}
+
+.gk-section {
+  height: 45%;
+  width: 40%;
+  border-top: 2px solid var(--gray);
+  border-right: 2px solid var(--gray);
+  border-left: 2px solid var(--gray);
+  background-color: var(--white);
+}
