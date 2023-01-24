@@ -1,8 +1,8 @@
 import React from "react";
 import "./PlayerPosition.css";
 
-const PlayerPosition = () => {
-  return <div>PlayerPosition</div>;
+const PlayerPosition = ({ position }) => {
+  return <div className="player-position">{position}</div>;
 };
 
 export default PlayerPosition;

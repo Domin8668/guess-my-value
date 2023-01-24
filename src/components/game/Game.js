@@ -4,6 +4,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import "./Game.css";
 import formatter from "../../utils/value-formatter";
 import Score from "./score/Score";
+import Player from "./player/Player";
 
 const Choice = {
   Higher: "Higher",
@@ -74,21 +75,31 @@ const Game = () => {
 
   return (
     <>
-      {/* <div>Game</div> */}
       {previousPlayer && newPlayer ? (
         <div>
           <Score score={score} record={score} />
-          <div>{previousPlayer?.name}</div>
-          <div>{formatter(previousPlayer?.value)}</div>
-          <div>{newPlayer?.name}</div>
-          <div>{formatter(newPlayer?.value)}</div>
-          <button onClick={() => nextTurn(Choice.Higher)} className="higher">
-            Higher
-          </button>
-          <button onClick={() => nextTurn(Choice.Lower)} className="lower">
-            Lower
-          </button>
-          <div>Score: {score}</div>
+          <div className="players-container">
+            <Player
+              name={previousPlayer?.name}
+              value={formatter(previousPlayer?.value)}
+              age={previousPlayer?.age}
+              position={previousPlayer?.position}
+            />
+            <Player
+              name={newPlayer?.name}
+              value={formatter("?")}
+              age={newPlayer?.age}
+              position={newPlayer?.position}
+            />
+          </div>
+          <div className="buttons-container">
+            <button onClick={() => nextTurn(Choice.Higher)} className="higher">
+              Higher
+            </button>
+            <button onClick={() => nextTurn(Choice.Lower)} className="lower">
+              Lower
+            </button>
+          </div>
         </div>
       ) : (
         <ClipLoader loading={!previousPlayer && !newPlayer} size={150} />

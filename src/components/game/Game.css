@@ -1,11 +1,19 @@
 /* higher/lower button section starts */
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0.5rem auto;
+}
+
 button {
   color: var(--white);
   border: 2px solid var(--gray);
   padding: 0.5rem 1.5rem;
   font-size: 1.5rem;
   border-radius: 1rem;
-  margin: 1rem auto;
+  margin: 0 auto;
   display: flex;
 }
 
@@ -17,15 +25,21 @@ button {
   background-color: var(--red);
 }
 
-button:active {
-  background-color: var(--gray);
-}
-
 .lower:active {
   color: var(--red);
+  background-color: var(--gray);
 }
 
 .higher:active {
   color: var(--green);
+  background-color: var(--gray);
 }
 /* higher/lower button section ends */
+
+/* players starts */
+.players-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem auto;
+}
+/* players ends */
