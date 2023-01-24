@@ -1,0 +1,4 @@
+.lives-container {
+  display: flex;
+  flex-direction: row;
+}
