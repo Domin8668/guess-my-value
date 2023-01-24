@@ -5,13 +5,14 @@
 }
 
 :root {
-  /* standard colors */
+  /* theme colors */
   --black: rgb(26, 17, 16);
   --white: rgb(248, 248, 255);
+  --blue: rgb(39, 68, 114);
 
   /* Higher Lower colors */
   --red: rgb(233, 125, 125);
-  --green: rgb(164, 156, 156);
+  --green: rgb(164, 236, 156);
 
   /* Borders colors */
   --gray: rgb(112, 112, 112);
