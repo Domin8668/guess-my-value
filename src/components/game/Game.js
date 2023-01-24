@@ -93,10 +93,16 @@ const Game = () => {
             />
           </div>
           <div className="buttons-container">
-            <button onClick={() => nextTurn(Choice.Higher)} className="higher">
+            <button
+              onClick={() => nextTurn(Choice.Higher)}
+              className="higher-lower-button higher"
+            >
               Higher
             </button>
-            <button onClick={() => nextTurn(Choice.Lower)} className="lower">
+            <button
+              onClick={() => nextTurn(Choice.Lower)}
+              className="higher-lower-button lower"
+            >
               Lower
             </button>
           </div>
