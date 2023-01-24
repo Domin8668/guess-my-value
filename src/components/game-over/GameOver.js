@@ -1,5 +1,5 @@
 import React from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useOutletContext, useParams, useNavigate } from "react-router-dom";
 import "./GameOver.css";
 import formatter from "../../utils/value-formatter";
 import Player from "../game/player/Player";
@@ -21,11 +21,11 @@ const GameOver = () => {
     setIsGameInProgress,
     isGameOver,
     setIsGameOver,
-    usedIndexes,
-    setUsedIndexes,
   } = useOutletContext();
 
-  const lastPlayer = players[usedIndexes.at(-1)];
+  const { id } = useParams();
+
+  const lastPlayer = players[id];
 
   return (
     <>
