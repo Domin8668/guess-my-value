@@ -7,7 +7,7 @@ const Score = ({ score, record }) => {
   if (record == undefined) record = 0;
 
   return (
-    <div className="container">
+    <div className="score-container">
       <div className="text-score">
         Score <span className="current-score-number">{score}</span>
       </div>
