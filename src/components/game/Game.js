@@ -30,10 +30,9 @@ const Game = () => {
     setIsGameInProgress,
     isGameOver,
     setIsGameOver,
-    usedIndexes,
-    setUsedIndexes,
   } = useOutletContext();
 
+  const [usedIndexes, setUsedIndexes] = useState([]);
   const [previousPlayer, setPreviousPlayer] = useState(undefined);
   const [newPlayer, setNewPlayer] = useState(undefined);
   const [showValue, setShowValue] = useState(false);
@@ -46,7 +45,7 @@ const Game = () => {
   }, [players]);
 
   useEffect(() => {
-    if (isGameOver) navigate("/game-over");
+    if (isGameOver) navigate(`/game-over/${usedIndexes.at(-1)}`);
   }, [isGameOver]);
 
   const getNewIndex = () => {
