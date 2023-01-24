@@ -30,9 +30,10 @@ const Game = () => {
     setIsGameInProgress,
     isGameOver,
     setIsGameOver,
+    usedIndexes,
+    setUsedIndexes,
   } = useOutletContext();
 
-  const [usedIndexes, setUsedIndexes] = useState([]);
   const [previousPlayer, setPreviousPlayer] = useState(undefined);
   const [newPlayer, setNewPlayer] = useState(undefined);
   const [showValue, setShowValue] = useState(false);
@@ -69,9 +70,16 @@ const Game = () => {
   const nextTurn = (choice) => {
     if (isChoiceCorrect(choice)) {
       setScore((prevScore) => prevScore + 1);
+      getNewPlayers();
     } else {
-      setRemainingLives((prevRemainingLives) => prevRemainingLives - 1);
+      setRemainingLives((prevRemainingLives) => {
+        if (prevRemainingLives !== 1) getNewPlayers();
+        return prevRemainingLives - 1;
+      });
     }
+  };
+
+  const getNewPlayers = () => {
     setShowValue(true);
     setTimeout(() => {
       setPreviousPlayer(newPlayer);
