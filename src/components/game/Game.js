@@ -11,6 +11,8 @@ const Choice = {
   Lower: "Lower",
 };
 
+const showValueTimeout = 1000;
+
 const Game = () => {
   const {
     Lives,
@@ -33,6 +35,7 @@ const Game = () => {
   const [usedIndexes, setUsedIndexes] = useState([]);
   const [previousPlayer, setPreviousPlayer] = useState(undefined);
   const [newPlayer, setNewPlayer] = useState(undefined);
+  const [showValue, setShowValue] = useState(false);
 
   const navigate = useNavigate();
 
@@ -69,8 +72,12 @@ const Game = () => {
     } else {
       setRemainingLives((prevRemainingLives) => prevRemainingLives - 1);
     }
-    setPreviousPlayer(newPlayer);
-    setNewPlayer(players[getNewIndex()]);
+    setShowValue(true);
+    setTimeout(() => {
+      setPreviousPlayer(newPlayer);
+      setNewPlayer(players[getNewIndex()]);
+      setShowValue(false);
+    }, showValueTimeout);
   };
 
   return (
@@ -87,7 +94,7 @@ const Game = () => {
             />
             <Player
               name={newPlayer?.name}
-              value={formatter("?")}
+              value={showValue ? formatter(newPlayer?.value) : formatter("?")}
               age={newPlayer?.age}
               position={newPlayer?.position}
             />
