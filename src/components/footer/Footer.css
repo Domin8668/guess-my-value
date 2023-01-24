@@ -10,7 +10,7 @@
   margin: 0 auto;
 }
 
-p {
+.authors {
   color: var(--white);
   font-weight: bold;
 }
