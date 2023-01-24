@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: var(--black);
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+  margin: 0.3rem auto;
+  width: 98%;
+}
+
+.text-score {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.record-number {
+  color: var(--green);
+}
+
+.current-score-number {
+  color: var(--forward);
+}

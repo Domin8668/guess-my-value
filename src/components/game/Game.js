@@ -3,6 +3,7 @@ import { useOutletContext, useNavigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./Game.css";
 import formatter from "../../utils/value-formatter";
+import Score from "./score/Score";
 
 const Choice = {
   Higher: "Higher",
@@ -73,15 +74,20 @@ const Game = () => {
 
   return (
     <>
-      <div>Game</div>
+      {/* <div>Game</div> */}
       {previousPlayer && newPlayer ? (
         <div>
+          <Score score={score} record={score} />
           <div>{previousPlayer?.name}</div>
           <div>{formatter(previousPlayer?.value)}</div>
           <div>{newPlayer?.name}</div>
           <div>{formatter(newPlayer?.value)}</div>
-          <button onClick={() => nextTurn(Choice.Higher)}>Higher</button>
-          <button onClick={() => nextTurn(Choice.Lower)}>Lower</button>
+          <button onClick={() => nextTurn(Choice.Higher)} className="higher">
+            Higher
+          </button>
+          <button onClick={() => nextTurn(Choice.Lower)} className="lower">
+            Lower
+          </button>
           <div>Score: {score}</div>
         </div>
       ) : (
