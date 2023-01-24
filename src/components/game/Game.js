@@ -11,6 +11,8 @@ const Choice = {
   Lower: "Lower",
 };
 
+const showValueTimeout = 1000;
+
 const Game = () => {
   const {
     Lives,
@@ -28,11 +30,13 @@ const Game = () => {
     setIsGameInProgress,
     isGameOver,
     setIsGameOver,
+    usedIndexes,
+    setUsedIndexes,
   } = useOutletContext();
 
-  const [usedIndexes, setUsedIndexes] = useState([]);
   const [previousPlayer, setPreviousPlayer] = useState(undefined);
   const [newPlayer, setNewPlayer] = useState(undefined);
+  const [showValue, setShowValue] = useState(false);
 
   const navigate = useNavigate();
 
@@ -66,11 +70,22 @@ const Game = () => {
   const nextTurn = (choice) => {
     if (isChoiceCorrect(choice)) {
       setScore((prevScore) => prevScore + 1);
+      getNewPlayers();
     } else {
-      setRemainingLives((prevRemainingLives) => prevRemainingLives - 1);
+      setRemainingLives((prevRemainingLives) => {
+        if (prevRemainingLives !== 1) getNewPlayers();
+        return prevRemainingLives - 1;
+      });
     }
-    setPreviousPlayer(newPlayer);
-    setNewPlayer(players[getNewIndex()]);
+  };
+
+  const getNewPlayers = () => {
+    setShowValue(true);
+    setTimeout(() => {
+      setPreviousPlayer(newPlayer);
+      setNewPlayer(players[getNewIndex()]);
+      setShowValue(false);
+    }, showValueTimeout);
   };
 
   return (
@@ -87,7 +102,7 @@ const Game = () => {
             />
             <Player
               name={newPlayer?.name}
-              value={formatter("?")}
+              value={showValue ? formatter(newPlayer?.value) : formatter("?")}
               age={newPlayer?.age}
               position={newPlayer?.position}
             />

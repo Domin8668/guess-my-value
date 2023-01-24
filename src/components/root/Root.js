@@ -30,6 +30,7 @@ const Root = () => {
   const [remainingLives, setRemainingLives] = useState(Lives[currentLevel]);
   const [isGameInProgress, setIsGameInProgress] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [usedIndexes, setUsedIndexes] = useState([]);
 
   useEffect(() => {
     setPlayers(data);
@@ -88,6 +89,8 @@ const Root = () => {
             setIsGameInProgress,
             isGameOver,
             setIsGameOver,
+            usedIndexes,
+            setUsedIndexes,
           }}
         />
       </main>
