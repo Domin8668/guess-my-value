@@ -8,6 +8,8 @@
   border-radius: 10px;
   margin: 0.3rem auto;
   width: 98%;
+  height: 5vh;
+  align-items: center;
 }
 
 .text-score {
