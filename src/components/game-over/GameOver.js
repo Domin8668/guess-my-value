@@ -30,6 +30,7 @@ const GameOver = () => {
 
   const playAgain = () => {
     setScore(0);
+    setRemainingLives(Lives[currentLevel]);
     setIsGameOver(false);
     setIsGameInProgress(true);
     setTimeout(() => navigate("/game"), 500);
