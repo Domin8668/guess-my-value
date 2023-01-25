@@ -91,46 +91,51 @@ const Game = () => {
 
   return (
     <>
-      {previousPlayer && newPlayer ? (
-        <div>
-          <Score
-            score={score}
-            record={record[currentLevel]}
-            livesCount={lives}
-            livesLeft={remainingLives}
-          />
-          <div className="players-container">
-            <Player
-              name={previousPlayer?.name}
-              value={formatter(previousPlayer?.value)}
-              age={previousPlayer?.age}
-              position={previousPlayer?.position}
-              image={previousPlayer?.image_link}
-            />
-            <Player
-              name={newPlayer?.name}
-              value={showValue ? formatter(newPlayer?.value) : formatter("?")}
-              age={newPlayer?.age}
-              position={newPlayer?.position}
-              image={newPlayer?.image_link}
-            />
+      <div className="game-container">
+        {previousPlayer && newPlayer ? (
+          <div>
+            <div className="scoreboard-container">
+              <Score
+                score={score}
+                record={record[currentLevel]}
+                livesCount={lives}
+                livesLeft={remainingLives}
+                level={currentLevel.toLowerCase()}
+              />
+            </div>
+            <div className="players-container">
+              <Player
+                name={previousPlayer?.name}
+                value={formatter(previousPlayer?.value)}
+                age={previousPlayer?.age}
+                position={previousPlayer?.position}
+                image={previousPlayer?.image_link}
+              />
+              <Player
+                name={newPlayer?.name}
+                value={showValue ? formatter(newPlayer?.value) : formatter("?")}
+                age={newPlayer?.age}
+                position={newPlayer?.position}
+                image={newPlayer?.image_link}
+              />
+            </div>
+            <div className="buttons-container">
+              <FunctionButton
+                callback={() => nextTurn(Choice.Lower)}
+                text={"Lower"}
+                styleClassName={"lower"}
+              />
+              <FunctionButton
+                callback={() => nextTurn(Choice.Higher)}
+                text={"Higher"}
+                styleClassName={"higher"}
+              />
+            </div>
           </div>
-          <div className="buttons-container">
-            <FunctionButton
-              callback={() => nextTurn(Choice.Lower)}
-              text={"Lower"}
-              styleClassName={"lower"}
-            />
-            <FunctionButton
-              callback={() => nextTurn(Choice.Higher)}
-              text={"Higher"}
-              styleClassName={"higher"}
-            />
-          </div>
-        </div>
-      ) : (
-        <ClipLoader loading={!previousPlayer && !newPlayer} size={150} />
-      )}
+        ) : (
+          <ClipLoader loading={!previousPlayer && !newPlayer} size={150} />
+        )}
+      </div>
     </>
   );
 };

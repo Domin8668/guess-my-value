@@ -1,3 +1,17 @@
+/* game section */
+.game-container {
+  background-color: var(--dark-white);
+  height: 90vh;
+}
+
+/* Score label zajmuje 5vh */
+.scoreboard-container {
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* higher/lower button section */
 .buttons-container {
   display: flex;
@@ -5,7 +19,7 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
-  height: 10vh;
+  height: 9vh;
 }
 
 /* players starts section */
