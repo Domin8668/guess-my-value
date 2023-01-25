@@ -2,9 +2,9 @@ import React from "react";
 import Lives from "../lives/Lives";
 import "./Score.css";
 
-const Score = ({ score, record , livesCount, livesLeft }) => {
-  if (score == undefined) score = 0;
-  if (record == undefined) record = 0;
+const Score = ({ score, record, livesCount, livesLeft }) => {
+  if (score === undefined) score = 0;
+  if (record === undefined) record = 0;
 
   return (
     <div className="score-container">
