@@ -24,8 +24,22 @@ const GameOver = () => {
   } = useOutletContext();
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const lastPlayer = players[id];
+
+  const playAgain = () => {
+    setScore(0);
+    setIsGameOver(false);
+    setIsGameInProgress(true);
+    setTimeout(() => navigate("/game"), 500);
+  };
+
+  const navigateToHomepage = () => {
+    setScore(0);
+    setIsGameOver(false);
+    navigate("/");
+  };
 
   return (
     <>
@@ -43,6 +57,8 @@ const GameOver = () => {
       ) : (
         <div>Wrong path</div>
       )}
+      <button onClick={playAgain}>Play Again</button>
+      <button onClick={navigateToHomepage}>Homepage</button>
     </>
   );
 };

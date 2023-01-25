@@ -51,12 +51,17 @@ const Root = () => {
   }, [score]);
 
   useEffect(() => {
-    setLives(Lives[currentLevel]);
-    setRemainingLives(Lives[currentLevel]);
-  }, [currentLevel]);
+    if (!isGameInProgress) {
+      setLives(Lives[currentLevel]);
+      setRemainingLives(Lives[currentLevel]);
+    }
+  }, [currentLevel, isGameInProgress]);
 
   useEffect(() => {
-    if (remainingLives === 0) setIsGameOver(true);
+    if (remainingLives === 0) {
+      setIsGameOver(true);
+      setIsGameInProgress(false);
+    }
   }, [remainingLives]);
 
   useEffect(() => {
