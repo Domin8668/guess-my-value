@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useOutletContext, useNavigate, Router } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./Game.css";
 import formatter from "../../utils/value-formatter";
@@ -15,6 +15,7 @@ const showValueTimeout = 1000;
 
 const Game = () => {
   const {
+    record,
     Lives,
     Level,
     players,
@@ -93,7 +94,7 @@ const Game = () => {
         <div>
           <Score
             score={score}
-            record={score}
+            record={record[currentLevel]}
             livesCount={lives}
             livesLeft={remainingLives}
           />
