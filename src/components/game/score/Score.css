@@ -5,8 +5,8 @@
   padding: 0.5rem 1rem;
   background-color: var(--black);
   border: 1px solid var(--gray);
-  border-radius: 10px;
-  margin: 0.3rem auto;
+  border-radius: 1rem;
+  margin: auto;
   width: 98%;
   height: 5vh;
   align-items: center;
@@ -18,14 +18,18 @@
   color: var(--white);
 }
 
-.record-number {
-  color: var(--green);
+.score-number {
+  color: var(--forward);
   margin-left: 0.2rem;
   font-weight: 900;
 }
 
-.current-score-number {
-  color: var(--forward);
-  margin-left: 0.2rem;
-  font-weight: 900;
+.record-easy {
+  color: var(--easy);
+}
+.record-medium {
+  color: var(--medium);
+}
+.record-hard {
+  color: var(--hard);
 }
