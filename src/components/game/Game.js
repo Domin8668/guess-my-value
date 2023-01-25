@@ -38,6 +38,7 @@ const Game = () => {
   const [previousPlayer, setPreviousPlayer] = useState(undefined);
   const [newPlayer, setNewPlayer] = useState(undefined);
   const [showValue, setShowValue] = useState(false);
+  const [isGuessBlocked, setIsGuessBlocked] = useState(false);
 
   const navigate = useNavigate();
 
@@ -82,10 +83,12 @@ const Game = () => {
 
   const getNewPlayers = () => {
     setShowValue(true);
+    setIsGuessBlocked(true);
     setTimeout(() => {
       setPreviousPlayer(newPlayer);
       setNewPlayer(players[getNewIndex()]);
       setShowValue(false);
+      setIsGuessBlocked(false);
     }, showValueTimeout);
   };
 
@@ -124,11 +127,13 @@ const Game = () => {
                 callback={() => nextTurn(Choice.Lower)}
                 text={"Lower"}
                 styleClassName={"lower"}
+                isButtonBlocked={isGuessBlocked}
               />
               <FunctionButton
                 callback={() => nextTurn(Choice.Higher)}
                 text={"Higher"}
                 styleClassName={"higher"}
+                isButtonBlocked={isGuessBlocked}
               />
             </div>
           </div>
