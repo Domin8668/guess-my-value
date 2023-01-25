@@ -4,6 +4,11 @@
   align-items: left;
   position: absolute;
   bottom: 0.1rem;
+  background-color: var(--white);
+  border: 2px solid var(--gray);
+  border-radius: 0.5rem;
+  padding: 0.1rem 0.3rem;
+  margin: 0 auto;
 }
 
 .market-value {

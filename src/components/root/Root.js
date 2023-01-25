@@ -78,6 +78,7 @@ const Root = () => {
       <main className="main-content">
         <Outlet
           context={{
+            record,
             Lives,
             Level,
             players,

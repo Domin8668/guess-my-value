@@ -8,7 +8,7 @@ const Life = ({ opacity }) => {
     className += " opacity";
   }
 
-  return <img className={className} src={ball} />;
+  return <img className={className} src={ball} alt="" />;
 };
 
 export default Life;

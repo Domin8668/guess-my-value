@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useOutletContext, useNavigate, Router } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./Game.css";
 import formatter from "../../utils/value-formatter";
@@ -15,6 +15,7 @@ const showValueTimeout = 1000;
 
 const Game = () => {
   const {
+    record,
     Lives,
     Level,
     players,
@@ -91,19 +92,26 @@ const Game = () => {
     <>
       {previousPlayer && newPlayer ? (
         <div>
-          <Score score={score} record={score} />
+          <Score
+            score={score}
+            record={record[currentLevel]}
+            livesCount={lives}
+            livesLeft={remainingLives}
+          />
           <div className="players-container">
             <Player
               name={previousPlayer?.name}
               value={formatter(previousPlayer?.value)}
               age={previousPlayer?.age}
               position={previousPlayer?.position}
+              image={previousPlayer?.image_link}
             />
             <Player
               name={newPlayer?.name}
               value={showValue ? formatter(newPlayer?.value) : formatter("?")}
               age={newPlayer?.age}
               position={newPlayer?.position}
+              image={newPlayer?.image_link}
             />
           </div>
           <div className="buttons-container">

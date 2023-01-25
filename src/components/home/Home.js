@@ -4,6 +4,7 @@ import "./Home.css";
 
 const Home = () => {
   const {
+    record,
     Lives,
     Level,
     players,

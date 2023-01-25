@@ -5,6 +5,9 @@
 }
 
 :root {
+  /* Font */
+  font-family: "Gill Sans", sans-serif;
+
   /* theme colors */
   --black: rgb(26, 17, 16);
   --white: rgb(248, 248, 255);

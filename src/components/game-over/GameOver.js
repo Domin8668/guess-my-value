@@ -6,6 +6,7 @@ import Player from "../game/player/Player";
 
 const GameOver = () => {
   const {
+    record,
     Lives,
     Level,
     players,
@@ -44,20 +45,30 @@ const GameOver = () => {
 
   return (
     <>
-      <div>GameOver</div>
-      {lastPlayer ? (
-        <>
-          <div>Previous player:</div>
-          <Player
-            name={lastPlayer?.name}
-            value={formatter(lastPlayer?.value)}
-            age={lastPlayer?.age}
-            position={lastPlayer?.position}
-          />
-        </>
-      ) : (
-        <div>Wrong path</div>
-      )}
+      <div className="game-over-container">
+        <div className="game-over-text header-text">GameOver!</div>
+        <div className="game-over-text summary">
+          Record: {record[currentLevel]}
+        </div>
+        <div className="game-over-text summary">Score: {score}</div>
+
+        {lastPlayer ? (
+          <>
+            <div className="game-over-text summary player-text">
+              Previous Player
+            </div>
+            <Player
+              name={lastPlayer?.name}
+              value={formatter(lastPlayer?.value)}
+              age={lastPlayer?.age}
+              position={lastPlayer?.position}
+              image={lastPlayer?.image_link}
+            />
+          </>
+        ) : (
+          <div className="game-over-text summary player-text">Wrong path</div>
+        )}
+      </div>
       <button onClick={playAgain}>Play Again</button>
       <button onClick={navigateToHomepage}>Homepage</button>
     </>

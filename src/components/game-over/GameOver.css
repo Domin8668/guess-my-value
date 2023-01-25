@@ -1,0 +1,21 @@
+.game-over-container {
+  width: 95%;
+  background-color: var(--white);
+  border: 2px solid var(--gray);
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+}
+
+.game-over-text {
+  font-weight: bold;
+  text-align: center;
+  margin: 0.1rem auto;
+}
+
+.header-text {
+  font-size: 2rem;
+}
+
+.summary {
+  font-size: 1.4rem;
+}
