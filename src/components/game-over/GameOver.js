@@ -5,6 +5,8 @@ import formatter from "../../utils/value-formatter";
 import Player from "../game/player/Player";
 import FunctionButton from "../buttons/functionButton/FunctionButton";
 
+const playAgainTimeout = 200;
+
 const GameOver = () => {
   const {
     record,
@@ -35,7 +37,7 @@ const GameOver = () => {
     setRemainingLives(Lives[currentLevel]);
     setIsGameOver(false);
     setIsGameInProgress(true);
-    setTimeout(() => navigate("/game"), 500);
+    setTimeout(() => navigate("/game"), playAgainTimeout);
   };
 
   const navigateToHomepage = () => {
