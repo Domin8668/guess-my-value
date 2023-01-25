@@ -2,7 +2,7 @@ import React from "react";
 import Lives from "../lives/Lives";
 import "./Score.css";
 
-const Score = ({ score, record }) => {
+const Score = ({ score, record , livesCount, livesLeft }) => {
   if (score == undefined) score = 0;
   if (record == undefined) record = 0;
 
@@ -12,7 +12,7 @@ const Score = ({ score, record }) => {
         Score <span className="current-score-number">{score}</span>
       </div>
 
-      <Lives livesCount={3} livesLeft={2} />
+      <Lives livesCount={livesCount} livesLeft={livesLeft} />
 
       <div className="text-score">
         Record <span className="record-number">{record}</span>

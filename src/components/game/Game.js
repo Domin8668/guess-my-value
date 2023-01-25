@@ -91,7 +91,12 @@ const Game = () => {
     <>
       {previousPlayer && newPlayer ? (
         <div>
-          <Score score={score} record={score} />
+          <Score
+            score={score}
+            record={score}
+            livesCount={lives}
+            livesLeft={remainingLives}
+          />
           <div className="players-container">
             <Player
               name={previousPlayer?.name}
