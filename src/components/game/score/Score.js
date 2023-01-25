@@ -11,7 +11,9 @@ const Score = ({ score, record }) => {
       <div className="text-score">
         Score <span className="current-score-number">{score}</span>
       </div>
+
       <Lives livesCount={3} livesLeft={2} />
+
       <div className="text-score">
         Record <span className="record-number">{record}</span>
       </div>
