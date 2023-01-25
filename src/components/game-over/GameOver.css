@@ -1,9 +1,15 @@
 .game-over-container {
+  height: 90vh;
+  background-color: var(--dark-white);
+  padding: 1rem 0;
+}
+
+.game-over-info-container {
   width: 95%;
   background-color: var(--white);
   border: 2px solid var(--gray);
-  border-radius: 0.5rem;
-  margin: 1rem auto;
+  border-radius: 1rem;
+  margin: 0 auto;
 }
 
 .game-over-text {
