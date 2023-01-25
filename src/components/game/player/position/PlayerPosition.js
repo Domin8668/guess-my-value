@@ -27,10 +27,15 @@ const PlayerPosition = ({ position }) => {
     <div className="player-position-container">
       <div
         className="for-section"
-        style={{
-          backgroundColor: isPlayerForward ? forward : standardColor,
-        }}
-      ></div>
+        style={{ backgroundColor: isPlayerForward ? forward : standardColor }}
+      >
+        <div
+          className="gk-section"
+          style={{
+            backgroundColor: isPlayerForward ? forward : standardColor,
+          }}
+        ></div>
+      </div>
 
       <div
         className="mid-section"

@@ -14,14 +14,18 @@
 
 .text-score {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--white);
 }
 
 .record-number {
   color: var(--green);
+  margin-left: 0.2rem;
+  font-weight: 900;
 }
 
 .current-score-number {
   color: var(--forward);
+  margin-left: 0.2rem;
+  font-weight: 900;
 }

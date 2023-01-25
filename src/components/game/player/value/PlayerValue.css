@@ -1,19 +1,19 @@
 .player-value-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: left;
   position: absolute;
-  top: 50%;
+  bottom: 0.1rem;
 }
 
 .market-value {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--black);
   font-weight: 500;
 }
 
 .player-value {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--black);
   font-weight: 700;
 }
