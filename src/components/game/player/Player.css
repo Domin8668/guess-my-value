@@ -4,11 +4,12 @@
   align-items: center;
   width: 90%;
   border: 2px solid var(--gray);
-  background-color: var(--white);
+  background-color: var(--gray);
   border-radius: 1rem;
   position: relative;
-  height: 35vh;
-  margin: 1.25vh auto;
+  height: 37vh;
+  margin: 0.25vh auto;
+  transition: 0.5s;
 }
 
 .player-name {

@@ -1,0 +1,39 @@
+/* global section starts */
+.button {
+  color: var(--gray);
+  border: 2px solid var(--gray);
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  display: flex;
+}
+
+.button:active {
+  background-color: var(--gray);
+}
+
+/* function buttons */
+.function {
+  background-color: var(--light-blue);
+}
+.function:active {
+  color: var(--light-blue);
+}
+
+/* Higher button */
+.higher {
+  background-color: var(--green);
+}
+.higher:active {
+  color: var(--green);
+}
+
+/* Lower button */
+.lower {
+  background-color: var(--red);
+}
+.lower:active {
+  color: var(--red);
+}

@@ -1,47 +1,31 @@
-/* higher/lower button section starts */
+/* game section */
+.game-container {
+  background-color: var(--dark-white);
+  height: 90vh;
+}
+
+/* Score label zajmuje 5vh */
+.scoreboard-container {
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* higher/lower button section */
 .buttons-container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
-  height: 10vh;
+  height: 9vh;
 }
 
-.higher-lower-button {
-  color: var(--white);
-  border: 2px solid var(--gray);
-  padding: 0.5rem 1.5rem;
-  font-size: 1.5rem;
-  border-radius: 1rem;
-  margin: 0 auto;
-  display: flex;
-}
-
-.higher {
-  background-color: var(--green);
-}
-
-.lower {
-  background-color: var(--red);
-}
-
-.lower:active {
-  color: var(--red);
-  background-color: var(--gray);
-}
-
-.higher:active {
-  color: var(--green);
-  background-color: var(--gray);
-}
-/* higher/lower button section ends */
-
-/* players starts */
+/* players starts section */
 .players-container {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   height: 75vh;
 }
-/* players ends */

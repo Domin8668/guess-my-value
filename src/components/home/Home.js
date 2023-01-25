@@ -1,5 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
+import FunctionButton from "../buttons/functionButton/FunctionButton";
 import "./Home.css";
 
 const Home = () => {
@@ -24,6 +26,10 @@ const Home = () => {
 
   const navigate = useNavigate();
 
+  const [backgroundColor, setbackgroundColor] = useState(
+    currentLevel.toLowerCase()
+  );
+
   const startGame = () => {
     setIsGameInProgress(true);
     setLives(Lives[currentLevel]);
@@ -33,48 +39,80 @@ const Home = () => {
 
   const onLevelChange = (level) => {
     setCurrentLevel(level);
+    setbackgroundColor(level.toLowerCase());
   };
 
   return (
     <>
-      <div>Home</div>
-      <div>
-        <h3>Choose the difficulty level:</h3>
-        <div>
-          <input
-            type="radio"
-            name="level"
-            value="Easy"
-            id="easy"
-            checked={currentLevel === Level.Easy}
-            onChange={() => onLevelChange(Level.Easy)}
-          />
-          <label htmlFor="easy">Easy</label>
+      <div className="home-container">
+        <div className="records-container">
+          <div className="record-text">
+            Record on Easy:{" "}
+            <span className="score-number record-easy">{record.Easy}</span>
+          </div>
+          <div className="record-text">
+            Record on Medium:{" "}
+            <span className="score-number record-medium">{record.Medium}</span>
+          </div>
+          <div className="record-text">
+            Record on Hard:{" "}
+            <span className="score-number record-hard">{record.Hard}</span>
+          </div>
         </div>
-        <div>
-          <input
-            type="radio"
-            name="level"
-            value="Medium"
-            id="medium"
-            checked={currentLevel === Level.Medium}
-            onChange={() => onLevelChange(Level.Medium)}
-          />
-          <label htmlFor="medium">Medium</label>
+
+        <div
+          className={`records-container radio-buttons-container ${backgroundColor}`}
+        >
+          <h3 className="record-text record-header">
+            Choose the difficulty level:
+          </h3>
+          <label className="rad-label" htmlFor="easy">
+            <input
+              className="rad-input"
+              type="radio"
+              name="level"
+              value="Easy"
+              id="easy"
+              checked={currentLevel === Level.Easy}
+              onChange={() => onLevelChange(Level.Easy)}
+            />
+            <div class="rad-design"></div>
+            <div class="rad-text">Easy</div>{" "}
+          </label>
+          <label className="rad-label" htmlFor="medium">
+            <input
+              className="rad-input"
+              type="radio"
+              name="level"
+              value="Medium"
+              id="medium"
+              checked={currentLevel === Level.Medium}
+              onChange={() => onLevelChange(Level.Medium)}
+            />
+            <div class="rad-design"></div>
+            <div class="rad-text">Medium</div>
+          </label>
+          <label className="rad-label" htmlFor="hard">
+            <input
+              className="rad-input"
+              type="radio"
+              name="level"
+              value="Hard"
+              id="hard"
+              checked={currentLevel === Level.Hard}
+              onChange={() => onLevelChange(Level.Hard)}
+            />
+            <div class="rad-design"></div>
+            <div class="rad-text">Hard</div>{" "}
+          </label>
         </div>
-        <div>
-          <input
-            type="radio"
-            name="level"
-            value="Hard"
-            id="hard"
-            checked={currentLevel === Level.Hard}
-            onChange={() => onLevelChange(Level.Hard)}
-          />
-          <label htmlFor="hard">Hard</label>
-        </div>
+
+        <FunctionButton
+          callback={startGame}
+          text={"Start the game"}
+          styleClassName={"function"}
+        />
       </div>
-      <button onClick={startGame}>Start the game</button>
     </>
   );
 };

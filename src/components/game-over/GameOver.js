@@ -3,6 +3,7 @@ import { useOutletContext, useParams, useNavigate } from "react-router-dom";
 import "./GameOver.css";
 import formatter from "../../utils/value-formatter";
 import Player from "../game/player/Player";
+import FunctionButton from "../buttons/functionButton/FunctionButton";
 
 const GameOver = () => {
   const {
@@ -46,31 +47,41 @@ const GameOver = () => {
   return (
     <>
       <div className="game-over-container">
-        <div className="game-over-text header-text">GameOver!</div>
-        <div className="game-over-text summary">
-          Record: {record[currentLevel]}
-        </div>
-        <div className="game-over-text summary">Score: {score}</div>
+        <div className="game-over-info-container">
+          <div className="game-over-text header-text">GameOver!</div>
+          <div className="game-over-text summary">
+            Record: {record[currentLevel]}
+          </div>
+          <div className="game-over-text summary">Score: {score}</div>
 
-        {lastPlayer ? (
-          <>
-            <div className="game-over-text summary player-text">
-              Previous Player
-            </div>
-            <Player
-              name={lastPlayer?.name}
-              value={formatter(lastPlayer?.value)}
-              age={lastPlayer?.age}
-              position={lastPlayer?.position}
-              image={lastPlayer?.image_link}
-            />
-          </>
-        ) : (
-          <div className="game-over-text summary player-text">Wrong path</div>
-        )}
+          {lastPlayer ? (
+            <>
+              <div className="game-over-text summary player-text">
+                Previous Player
+              </div>
+              <Player
+                name={lastPlayer?.name}
+                value={formatter(lastPlayer?.value)}
+                age={lastPlayer?.age}
+                position={lastPlayer?.position}
+                image={lastPlayer?.image_link}
+              />
+            </>
+          ) : (
+            <div className="game-over-text summary player-text">Wrong path</div>
+          )}
+        </div>
+        <FunctionButton
+          callback={playAgain}
+          text={"Play Again"}
+          styleClassName={"function"}
+        />
+        <FunctionButton
+          callback={navigateToHomepage}
+          text={"Homepage"}
+          styleClassName={"function"}
+        />
       </div>
-      <button onClick={playAgain}>Play Again</button>
-      <button onClick={navigateToHomepage}>Homepage</button>
     </>
   );
 };

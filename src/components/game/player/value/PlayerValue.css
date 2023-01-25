@@ -1,7 +1,6 @@
 .player-value-container {
   display: flex;
   flex-direction: row;
-  align-items: left;
   position: absolute;
   bottom: 0.1rem;
   background-color: var(--white);
