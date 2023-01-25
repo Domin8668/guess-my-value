@@ -76,8 +76,8 @@ const Home = () => {
               checked={currentLevel === Level.Easy}
               onChange={() => onLevelChange(Level.Easy)}
             />
-            <div class="rad-design"></div>
-            <div class="rad-text">Easy</div>{" "}
+            <div className="rad-design"></div>
+            <div className="rad-text">Easy</div>{" "}
           </label>
           <label className="rad-label" htmlFor="medium">
             <input
@@ -89,8 +89,8 @@ const Home = () => {
               checked={currentLevel === Level.Medium}
               onChange={() => onLevelChange(Level.Medium)}
             />
-            <div class="rad-design"></div>
-            <div class="rad-text">Medium</div>
+            <div className="rad-design"></div>
+            <div className="rad-text">Medium</div>
           </label>
           <label className="rad-label" htmlFor="hard">
             <input
@@ -102,8 +102,8 @@ const Home = () => {
               checked={currentLevel === Level.Hard}
               onChange={() => onLevelChange(Level.Hard)}
             />
-            <div class="rad-design"></div>
-            <div class="rad-text">Hard</div>{" "}
+            <div className="rad-design"></div>
+            <div className="rad-text">Hard</div>{" "}
           </label>
         </div>
 
