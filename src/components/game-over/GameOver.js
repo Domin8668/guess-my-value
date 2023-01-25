@@ -3,6 +3,7 @@ import { useOutletContext, useParams, useNavigate } from "react-router-dom";
 import "./GameOver.css";
 import formatter from "../../utils/value-formatter";
 import Player from "../game/player/Player";
+import FunctionButton from "../buttons/functionButton/FunctionButton";
 
 const GameOver = () => {
   const {
@@ -69,8 +70,16 @@ const GameOver = () => {
           <div className="game-over-text summary player-text">Wrong path</div>
         )}
       </div>
-      <button onClick={playAgain}>Play Again</button>
-      <button onClick={navigateToHomepage}>Homepage</button>
+      <FunctionButton
+        callback={playAgain}
+        text={"Play Again"}
+        styleClassName={"function"}
+      />
+      <FunctionButton
+        callback={navigateToHomepage}
+        text={"Homepage"}
+        styleClassName={"function"}
+      />
     </>
   );
 };

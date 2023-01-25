@@ -5,6 +5,7 @@ import "./Game.css";
 import formatter from "../../utils/value-formatter";
 import Score from "./score/Score";
 import Player from "./player/Player";
+import FunctionButton from "../buttons/functionButton/FunctionButton";
 
 const Choice = {
   Higher: "Higher",
@@ -115,18 +116,16 @@ const Game = () => {
             />
           </div>
           <div className="buttons-container">
-            <button
-              onClick={() => nextTurn(Choice.Higher)}
-              className="higher-lower-button higher"
-            >
-              Higher
-            </button>
-            <button
-              onClick={() => nextTurn(Choice.Lower)}
-              className="higher-lower-button lower"
-            >
-              Lower
-            </button>
+            <FunctionButton
+              callback={() => nextTurn(Choice.Lower)}
+              text={"Lower"}
+              styleClassName={"lower"}
+            />
+            <FunctionButton
+              callback={() => nextTurn(Choice.Higher)}
+              text={"Higher"}
+              styleClassName={"higher"}
+            />
           </div>
         </div>
       ) : (

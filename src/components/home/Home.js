@@ -1,5 +1,6 @@
 import React from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
+import FunctionButton from "../buttons/functionButton/FunctionButton";
 import "./Home.css";
 
 const Home = () => {
@@ -74,7 +75,11 @@ const Home = () => {
           <label htmlFor="hard">Hard</label>
         </div>
       </div>
-      <button onClick={startGame}>Start the game</button>
+      <FunctionButton
+        callback={startGame}
+        text={"Start the game"}
+        styleClassName={"function"}
+      />
     </>
   );
 };
