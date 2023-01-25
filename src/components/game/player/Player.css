@@ -1,13 +1,14 @@
 .player-container {
   display: flex;
   flex-direction: column;
-  margin: 0.5rem auto;
   align-items: center;
-  width: 95%;
+  width: 90%;
   border: 2px solid var(--gray);
+  background-color: var(--white);
   border-radius: 1rem;
   position: relative;
-  height: 40vh;
+  height: 35vh;
+  margin: 1.25vh auto;
 }
 
 .player-name {
@@ -16,4 +17,15 @@
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
+  background-color: var(--white);
+  border: 2px solid var(--gray);
+
+  border-radius: 0.5rem;
+  padding: 0.1rem 0.3rem;
+}
+
+.player-image {
+  border-radius: 0.8rem;
+  height: 100%;
+  max-height: 100%;
 }

@@ -104,12 +104,14 @@ const Game = () => {
               value={formatter(previousPlayer?.value)}
               age={previousPlayer?.age}
               position={previousPlayer?.position}
+              image={previousPlayer?.image_link}
             />
             <Player
               name={newPlayer?.name}
               value={showValue ? formatter(newPlayer?.value) : formatter("?")}
               age={newPlayer?.age}
               position={newPlayer?.position}
+              image={newPlayer?.image_link}
             />
           </div>
           <div className="buttons-container">
