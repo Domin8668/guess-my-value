@@ -3,21 +3,17 @@ import "./Lives.css";
 import Life from "./life/Life";
 
 const Lives = ({ livesCount, livesLeft }) => {
-  // for (let index = 0; index < livesCount; index++) {
-  //   if(index<=livesLeft){
-  //     <Life opacity={false}
-  //   } else {
-  //     <Life opacity={true}/>
-  //   }
-  // }
+  const lives = [];
 
-  return (
-    <div className="lives-container">
-      <Life opacity={false} />
-      <Life opacity={false} />
-      <Life opacity={true} />
-    </div>
-  );
+  for (let index = 0; index < livesCount; index++) {
+    if (index < livesLeft) {
+      lives.push(<Life key={index} opacity={false} />);
+    } else {
+      lives.push(<Life key={index} opacity={true} />);
+    }
+  }
+
+  return <div className="lives-container">{lives}</div>;
 };
 
 export default Lives;
