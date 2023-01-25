@@ -4,7 +4,7 @@
   align-items: center;
   width: 90%;
   border: 2px solid var(--gray);
-  background-color: var(--white);
+  background-color: var(--gray);
   border-radius: 1rem;
   position: relative;
   height: 35vh;

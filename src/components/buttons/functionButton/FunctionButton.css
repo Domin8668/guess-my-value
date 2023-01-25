@@ -17,11 +17,9 @@
 }
 
 /* function buttons */
-
 .function {
   background-color: var(--light-blue);
 }
-
 .function:active {
   color: var(--light-blue);
 }
@@ -33,7 +31,6 @@
 .higher {
   background-color: var(--green);
 }
-
 .higher:active {
   color: var(--green);
 }
@@ -45,7 +42,6 @@
 .lower {
   background-color: var(--red);
 }
-
 .lower:active {
   color: var(--red);
 }
