@@ -67,6 +67,7 @@ const GameOver = () => {
                 age={lastPlayer?.age}
                 position={lastPlayer?.position}
                 image={lastPlayer?.image_link}
+                styleClassName={"game-over-player"}
               />
             </>
           ) : (

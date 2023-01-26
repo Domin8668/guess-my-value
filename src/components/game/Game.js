@@ -39,6 +39,7 @@ const Game = () => {
   const [newPlayer, setNewPlayer] = useState(undefined);
   const [showValue, setShowValue] = useState(false);
   const [isGuessBlocked, setIsGuessBlocked] = useState(false);
+  const [guessPlayerStyle, setguessPlayerStyle] = useState("gray");
 
   const navigate = useNavigate();
 
@@ -71,9 +72,11 @@ const Game = () => {
 
   const nextTurn = (choice) => {
     if (isChoiceCorrect(choice)) {
+      setguessPlayerStyle("green");
       setScore((prevScore) => prevScore + 1);
       getNewPlayers();
     } else {
+      setguessPlayerStyle("red");
       setRemainingLives((prevRemainingLives) => {
         if (prevRemainingLives !== 1) getNewPlayers();
         return prevRemainingLives - 1;
@@ -89,6 +92,7 @@ const Game = () => {
       setNewPlayer(players[getNewIndex()]);
       setShowValue(false);
       setIsGuessBlocked(false);
+      setguessPlayerStyle("gray");
     }, showValueTimeout);
   };
 
@@ -113,6 +117,7 @@ const Game = () => {
                 age={previousPlayer?.age}
                 position={previousPlayer?.position}
                 image={previousPlayer?.image_link}
+                styleClassName={"normal"}
               />
               <Player
                 name={newPlayer?.name}
@@ -120,6 +125,7 @@ const Game = () => {
                 age={newPlayer?.age}
                 position={newPlayer?.position}
                 image={newPlayer?.image_link}
+                styleClassName={guessPlayerStyle}
               />
             </div>
             <div className="buttons-container">

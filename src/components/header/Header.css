@@ -4,10 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5vh;
+  height: 8vh;
   width: 100%;
 }
 
 .logo {
+  max-height: 100%;
   background-color: var(--white);
+  border-radius: 20%;
 }
