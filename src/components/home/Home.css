@@ -1,10 +1,12 @@
 .home-container {
-  height: 90vh;
+  height: 88vh;
   background-color: var(--dark-white);
   padding: 1rem 0;
 }
 
+/* records-container  */
 .records-container {
+  height: 18vh;
   width: 95%;
   background-color: var(--white);
   border: 2px solid var(--gray);
@@ -12,6 +14,7 @@
   margin: 0 auto 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .record-text {
@@ -23,6 +26,14 @@
   font-size: 1.5rem;
 }
 
+/* Button container */
+.start-game-container {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+}
+
+/* difficulty levels */
 .easy {
   background-color: var(--easy);
 }
@@ -35,8 +46,13 @@
 }
 
 /* Radio Buttons */
+.radio-buttons-container {
+  height: 30vh;
+  justify-content: space-evenly;
+}
 
 /* The container */
+
 .rad-label {
   display: flex;
   align-items: center;
