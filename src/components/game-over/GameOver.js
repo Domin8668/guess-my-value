@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useOutletContext, useParams, useNavigate } from "react-router-dom";
 import "./GameOver.css";
 import formatter from "../../utils/value-formatter";
@@ -27,8 +27,12 @@ const GameOver = () => {
     setIsGameOver,
   } = useOutletContext();
 
-  const { id } = useParams();
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!isGameOver) navigate("/");
+  }, []);
+
+  const { id } = useParams();
 
   const lastPlayer = players[id];
 
