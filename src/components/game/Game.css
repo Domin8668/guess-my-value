@@ -1,7 +1,7 @@
 /* game section */
 .game-container {
   background-color: var(--dark-white);
-  height: 90vh;
+  height: 88vh;
 }
 
 /* Score label zajmuje 5vh */
@@ -19,7 +19,7 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
-  height: 9vh;
+  height: 8vh;
 }
 
 /* players starts section */
@@ -27,5 +27,5 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 75vh;
+  height: 74vh;
 }
