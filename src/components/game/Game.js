@@ -34,14 +34,17 @@ const Game = () => {
     setIsGameOver,
   } = useOutletContext();
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isGameInProgress) navigate("/");
+  }, []);
+
   const [usedIndexes, setUsedIndexes] = useState([]);
   const [previousPlayer, setPreviousPlayer] = useState(undefined);
   const [newPlayer, setNewPlayer] = useState(undefined);
   const [showValue, setShowValue] = useState(false);
   const [isGuessBlocked, setIsGuessBlocked] = useState(false);
   const [guessPlayerStyle, setguessPlayerStyle] = useState("gray");
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     setPreviousPlayer(players[getNewIndex()]);
