@@ -106,12 +106,13 @@ const Home = () => {
             <div className="rad-text">Hard</div>{" "}
           </label>
         </div>
-
-        <FunctionButton
-          callback={startGame}
-          text={"Start the game"}
-          styleClassName={"function"}
-        />
+        <div className="start-game-container">
+          <FunctionButton
+            callback={startGame}
+            text={"Start the game"}
+            styleClassName={"function"}
+          />
+        </div>
       </div>
     </>
   );

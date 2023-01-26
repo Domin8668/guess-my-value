@@ -74,16 +74,18 @@ const GameOver = () => {
             <div className="game-over-text summary player-text">Wrong path</div>
           )}
         </div>
-        <FunctionButton
-          callback={playAgain}
-          text={"Play Again"}
-          styleClassName={"function"}
-        />
-        <FunctionButton
-          callback={navigateToHomepage}
-          text={"Homepage"}
-          styleClassName={"function"}
-        />
+        <div className="game-over-buttons-container">
+          <FunctionButton
+            callback={playAgain}
+            text={"Play Again"}
+            styleClassName={"function"}
+          />
+          <FunctionButton
+            callback={navigateToHomepage}
+            text={"Homepage"}
+            styleClassName={"function"}
+          />
+        </div>
       </div>
     </>
   );
