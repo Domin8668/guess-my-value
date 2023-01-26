@@ -21,3 +21,24 @@
   color: var(--black);
   font-weight: 700;
 }
+
+.normal1,
+.gray1,
+.green1,
+.red1 {
+  background-color: transparent;
+}
+
+.normal1,
+.gray1 {
+  color: var(--black);
+}
+
+.green1 {
+  color: var(--green);
+}
+
+.red1,
+.game-over-player1 {
+  color: var(--red);
+}
