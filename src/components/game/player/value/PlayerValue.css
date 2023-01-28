@@ -11,13 +11,13 @@
 }
 
 .market-value {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--black);
   font-weight: 500;
 }
 
 .player-value {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--black);
   font-weight: 700;
 }

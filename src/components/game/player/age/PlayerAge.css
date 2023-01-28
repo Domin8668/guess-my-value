@@ -1,15 +1,15 @@
 .player-age {
-  width: 4rem;
-  height: 3rem;
+  width: 3rem;
+  height: 2.5rem;
   border: 2px solid var(--gray);
   background-color: var(--white);
   border-radius: 40%;
   position: absolute;
-  top: 8rem;
+  bottom: 2.2rem;
   right: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
