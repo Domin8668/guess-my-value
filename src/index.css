@@ -15,17 +15,17 @@
   --blue: rgb(39, 68, 114);
 
   /* Higher Lower colors */
-  --red: rgb(233, 125, 125);
-  --green: rgb(164, 236, 156);
+  --red: rgb(231, 110, 110);
+  --green: rgb(136, 230, 125);
 
   /* Borders colors */
-  --gray: rgb(112, 112, 112);
+  --gray: rgb(82, 82, 82);
 
   /* Buttons colors */
-  --light-blue: rgb(158, 201, 217);
-  --easy: rgb(139, 225, 182);
-  --medium: rgb(217, 199, 158);
-  --hard: rgb(212, 152, 147);
+  --light-blue: rgb(151, 221, 247);
+  --easy: rgb(139, 225, 139);
+  --medium: rgb(255, 228, 109);
+  --hard: rgb(228, 102, 102);
 
   /* Position colors */
   --goalkeeper: rgb(198, 96, 88);

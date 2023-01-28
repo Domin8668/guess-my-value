@@ -1,6 +1,6 @@
 .player-age {
   width: 4rem;
-  height: 4rem;
+  height: 3rem;
   border: 2px solid var(--gray);
   background-color: var(--white);
   border-radius: 40%;
