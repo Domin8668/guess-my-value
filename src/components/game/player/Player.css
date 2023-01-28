@@ -6,7 +6,7 @@
   border: 2px solid var(--gray);
   border-radius: 1rem;
   position: relative;
-  height: 36vh;
+  height: 30vh;
   margin: 0.5vh auto;
   transition: 0.5s;
 }
