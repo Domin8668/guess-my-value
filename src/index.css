@@ -32,4 +32,8 @@
   --defender: rgb(254, 220, 86);
   --midfield: rgb(110, 205, 148);
   --forward: rgb(30, 144, 255);
+
+  /* Header colors */
+  --header-top: #8f4db6;
+  --header-bottom: #5861c0;
 }

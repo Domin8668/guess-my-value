@@ -8,10 +8,12 @@
   border-radius: 1rem;
   margin: 0.1rem auto;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .button:active {
   background-color: var(--gray);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 .button:disabled {

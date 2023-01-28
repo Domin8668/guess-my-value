@@ -1,6 +1,6 @@
 .header {
-  background-color: var(--blue);
-  border-bottom: 2px solid var(--gray);
+  background: linear-gradient(var(--header-top), var(--header-bottom));
+  border-bottom: 2px solid var(--header-bottom);
   display: flex;
   justify-content: center;
   align-items: center;
