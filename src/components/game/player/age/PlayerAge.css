@@ -4,9 +4,6 @@
   border: 2px solid var(--gray);
   background-color: var(--white);
   border-radius: 40%;
-  position: absolute;
-  bottom: 2.2rem;
-  right: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
