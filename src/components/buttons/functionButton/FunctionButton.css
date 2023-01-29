@@ -44,14 +44,14 @@
   color: var(--red);
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .button {
     font-size: 1.3rem;
     padding: 0.3rem 1.4rem;
   }
 }
 
-@media (max-height: 360px) {
+@media (max-height: 380px) {
   .button {
     font-size: 1.3rem;
     padding: 0.3rem 1.3rem;
