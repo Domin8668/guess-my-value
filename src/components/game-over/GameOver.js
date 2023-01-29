@@ -54,17 +54,15 @@ const GameOver = () => {
     <>
       <div className="game-over-container">
         <div className="game-over-info-container">
-          <div className="game-over-text header-text">GameOver!</div>
-          <div className="game-over-text summary">
-            Record: {record[currentLevel]}
+          <div className="game-over-stats-container">
+            <div className="game-over-text header-text">GameOver!</div>
+            <div className="game-over-text summary">
+              Record: {record[currentLevel]}
+            </div>
+            <div className="game-over-text summary">Score: {score}</div>
           </div>
-          <div className="game-over-text summary">Score: {score}</div>
-
           {lastPlayer ? (
             <>
-              <div className="game-over-text summary player-text">
-                Previous Player
-              </div>
               <Player
                 name={lastPlayer?.name}
                 value={formatter(lastPlayer?.value)}
@@ -78,6 +76,7 @@ const GameOver = () => {
             <div className="game-over-text summary player-text">Wrong path</div>
           )}
         </div>
+
         <div className="game-over-buttons-container">
           <FunctionButton
             callback={playAgain}
