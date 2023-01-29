@@ -10,8 +10,10 @@ const Player = ({ name, value, age, position, image, styleClassName }) => {
       <img className={`player-image  ${styleClassName}`} src={image} alt="" />
       <div className="player-name">{name}</div>
       <PlayerValue value={value} styleClassName={styleClassName} />
-      <PlayerAge age={age} />
-      <PlayerPosition position={position} />
+      <div className="position-age-container">
+        <PlayerPosition position={position} />
+        <PlayerAge age={age} />
+      </div>
     </div>
   );
 };

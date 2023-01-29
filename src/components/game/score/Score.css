@@ -33,3 +33,9 @@
 .record-hard {
   color: var(--hard);
 }
+
+@media (orientation: landscape) {
+  .score-container {
+    height: 7vh;
+  }
+}

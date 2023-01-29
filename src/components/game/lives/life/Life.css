@@ -5,3 +5,9 @@
 .opacity {
   opacity: 50%;
 }
+
+@media (orientation: landscape) {
+  .heart {
+    max-height: 6vh;
+  }
+}

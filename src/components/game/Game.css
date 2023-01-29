@@ -6,7 +6,7 @@
 
 /* Score label zajmuje 5vh */
 .scoreboard-container {
-  height: 6vh;
+  height: 7.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,4 +28,11 @@
   flex-direction: column;
   margin: 0 auto;
   height: 64vh;
+}
+
+@media (orientation: landscape) {
+  .players-container {
+    flex-direction: row;
+    height: 58vh;
+  }
 }

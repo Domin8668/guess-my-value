@@ -5,6 +5,14 @@
 }
 
 .game-over-info-container {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.game-over-stats-container {
+  padding: 1rem;
   width: 95%;
   display: flex;
   flex-direction: column;
@@ -12,13 +20,14 @@
   background-color: var(--white);
   border: 2px solid var(--gray);
   border-radius: 1rem;
-  margin: 0 auto;
+  margin: 0.5vh auto;
+  transition: 0.5s;
 }
 
 .game-over-text {
   font-weight: bold;
   text-align: center;
-  margin: 0.1rem auto;
+  margin: 0 auto;
 }
 
 .header-text {
@@ -35,5 +44,35 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  padding: 0.5rem;
+}
+
+@media (orientation: landscape) {
+  .game-over-container {
+    height: 88vh;
+    background-color: var(--dark-white);
+    padding: 0.2rem 0;
+  }
+
+  .game-over-info-container {
+    flex-direction: row;
+    height: 60vh;
+  }
+
+  .game-over-stats-container {
+    width: 45%;
+    height: 92%;
+  }
+
+  .game-over-buttons-container {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .header-text {
+    font-size: 1.8rem;
+  }
+
+  .summary {
+    font-size: 1.2rem;
+  }
 }
