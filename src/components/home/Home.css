@@ -140,15 +140,31 @@
   }
 }
 
-@media (max-height: 480px) or (max-width: 280px) {
+@media (max-width: 360px) {
   .record-header {
     font-size: 1.1rem;
   }
   .record-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .rad-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+  .rad-label {
+    padding: 0.3rem;
+    margin: 0.3rem;
+  }
+}
+
+@media (max-height: 360px) {
+  .record-header {
+    font-size: 1.1rem;
+  }
+  .record-text {
+    font-size: 1.1rem;
+  }
+  .rad-text {
+    font-size: 0.9rem;
   }
   .rad-label {
     padding: 0.3rem;

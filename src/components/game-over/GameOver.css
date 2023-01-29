@@ -12,6 +12,7 @@
 }
 
 .game-over-stats-container {
+  padding: 1rem;
   width: 95%;
   display: flex;
   flex-direction: column;
