@@ -21,6 +21,7 @@
   border: 2px solid var(--gray);
   border-radius: 1rem;
   margin: 0.5vh auto;
+  transition: 0.5s;
 }
 
 .game-over-text {
